@@ -1,9 +1,9 @@
-import CalculatorLogo from "./assets/investment-calculator-logo.png";
+import calculatorLogo from "../assets/investment-calculator-logo.png";
 
 const Header = ({ children }) => {
   return (
     <header id="header">
-      <img src={CalculatorLogo} alt="" />
+      <img src={calculatorLogo} alt="Logo show ing a money bag" />
       <h1>{children}</h1>
     </header>
   );
