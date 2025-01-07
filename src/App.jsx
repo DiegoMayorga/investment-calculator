@@ -12,6 +12,8 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = userInput.duration >= 1;
+
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((prevUserInput) => {
       return {
@@ -24,8 +26,12 @@ function App() {
   return (
     <>
       <Header children={"Investment Calculator"} />
-      <UserInput onChange={handleChange} userInput={userInput}/>
-      <Results input={userInput}/>
+      <UserInput onChange={handleChange} userInput={userInput} />
+      {inputIsValid ? (
+        <Results input={userInput} />
+      ) : (
+        <p className="center">Invalid input. Duration must be at least 1.</p>
+      )}
     </>
   );
 }
